@@ -116,13 +116,11 @@ public class ManagerGrade {
                             System.out.print("영어점수 수정 : ");
                             int newEScore = scanner.nextInt();
                             s.seteScore(newEScore);
-                            // 점수 수정 후 반영해서 총점, 평균 다시 구해야 함
                             s.setTotalAndAvg(s.getkScore(), newEScore, s.getmScore());
                             break;
                         case 3:
                             System.out.print("수학점수 수정 : ");
                             int newMScore = scanner.nextInt();
-                            // 점수 수정 후 반영해서 총점, 평균 다시 구해야 함
                             s.setTotalAndAvg(s.getkScore(), s.geteScore(), newMScore);
                             break;
                         default: // case이외의 경우

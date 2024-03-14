@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.hana'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral() // 아래 dependencies 적은 내용을 maven으로 가서 받아오겠음.
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // lombok 추가
+    compileOnly("org.projectlombok:lombok:1.18.24")
+    annotationProcessor("org.projectlombok:lombok:1.18.24")
+
+    testCompileOnly ("org.projectlombok:lombok:1.18.24")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.31'
+
+}
+
+test {
+    useJUnitPlatform()
+}
